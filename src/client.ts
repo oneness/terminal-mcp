@@ -10,12 +10,12 @@ import {
 
 class MCPClient {
   private client: Client;
-  private verboseLogging: boolean = true;
+  private verboseLogging: boolean = false;
 
   constructor() {
     this.client = new Client(
       {
-        name: "hello-world-client",
+        name: "terminal-mcp-client",
         version: "1.0.0",
       },
       {
@@ -48,7 +48,7 @@ class MCPClient {
       
       this.log("Available tools:");
       response.tools.forEach((tool) => {
-        this.log(`- ${tool.name}: ${tool.description}`);
+        console.log(`- ${tool.name}: ${tool.description}`);
       });
       
       return response.tools;
